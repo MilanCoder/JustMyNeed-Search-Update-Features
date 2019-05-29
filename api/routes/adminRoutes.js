@@ -259,12 +259,16 @@ adminRoutes.post('/editCategoryList',jwtVerification.verifyToken, async function
 adminRoutes.post('/imageUpload',(req,res)=>{
   
             upload2(req,res,function(err){
+                
                 jwt.verify(req.body.idToken,jwtVerification.adminSecurekey,(error,authData)=>{
                     
-                    if(err){
+                    if(error){
                         res.status(401).json("Session TimeOut ,Please login again");
                     }
                     else{
+                        if(err){
+                            res.status(401).json(err);
+                        }else{
 
            //    console.log(req.body,req.file,req.body.files);
                  //push url to db
@@ -276,7 +280,7 @@ adminRoutes.post('/imageUpload',(req,res)=>{
                     }else{
                         res.json(401).json('No File Uploaded')
                     }
-                    }})
+                 } }})
                 })
             
                 
