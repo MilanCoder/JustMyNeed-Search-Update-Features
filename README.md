@@ -28,6 +28,10 @@ or
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+## Search Option Update
+Update for searches as the old category Section didnt allow faster searches so for that to happen our option was to do let it on the database to do faster query and that is what is been done in this update.
+
+
 ## Documentation
 
 For more information about using Node.js on Heroku, see these Dev Center articles:
